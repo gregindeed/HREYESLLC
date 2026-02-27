@@ -1,65 +1,168 @@
-import Image from "next/image";
+import { Box, Flex, Text, Heading, Button, Separator } from "@radix-ui/themes";
+
+const HOLDINGS = [
+  {
+    num: "01",
+    title: "Real Estate",
+    desc: "Residential and commercial properties across key metropolitan markets.",
+  },
+  {
+    num: "02",
+    title: "Private Equity",
+    desc: "Strategic positions in growth-stage companies and emerging ventures.",
+  },
+  {
+    num: "03",
+    title: "Capital Markets",
+    desc: "Diversified portfolio of equities, fixed income, and alternative instruments.",
+  },
+  {
+    num: "04",
+    title: "Digital Assets",
+    desc: "Forward-looking exposure to blockchain infrastructure and digital economies.",
+  },
+  {
+    num: "05",
+    title: "Legacy Investments",
+    desc: "Long-horizon assets preserved and managed for generational continuity.",
+  },
+  {
+    num: "06",
+    title: "Advisory",
+    desc: "Internal counsel on asset allocation, risk management, and family governance.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <Box asChild>
+      <main>
+        {/* ═══════════ HERO ═══════════ */}
+        <section className="hero">
+          <div className="fade-in">
+            <p className="hero-logo">Est. 2025</p>
+          </div>
+
+          <Heading asChild>
+            <h1 className="hero-title fade-in fade-in-delay-1">
+              H <strong>REYES</strong> LLC
+            </h1>
+          </Heading>
+
+          <Text asChild>
+            <p className="hero-subtitle fade-in fade-in-delay-2">
+              A private family holdings company stewarding diversified assets
+              with discipline, discretion, and a long-term vision.
+            </p>
+          </Text>
+
+          <div className="fade-in fade-in-delay-3">
+            <Button
+              variant="outline"
+              size="3"
+              highContrast
+              asChild
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+              <a href="#about">Discover More</a>
+            </Button>
+          </div>
+
+          <div className="hero-scroll fade-in fade-in-delay-4">
+            <span>Scroll</span>
+            <div className="hero-scroll-line" />
+          </div>
+        </section>
+
+        {/* ═══════════ ABOUT ═══════════ */}
+        <section id="about" className="about">
+          <div className="hr-section">
+            <div className="about-grid">
+              <div>
+                <p className="about-label">About the Firm</p>
+                <Separator size="4" mb="4" />
+                <div className="about-text">
+                  <p>
+                    H Reyes LLC is the centralized holding entity of the Reyes
+                    family’s financial interests. Founded on principles of
+                    prudent stewardship and measured growth, the firm oversees a
+                    diversified portfolio spanning real estate, private equity,
+                    capital markets, and emerging digital assets.
+                  </p>
+                  <p>
+                    Our approach is deliberate. We invest with conviction, manage
+                    with transparency, and build with the intention of
+                    generational impact. Every decision reflects a commitment to
+                    preserving and expanding the legacy of the Reyes name.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <p className="about-label">At a Glance</p>
+                <Separator size="4" mb="4" />
+                <div className="about-stat-grid">
+                  <div>
+                    <p className="about-stat-value">6</p>
+                    <p className="about-stat-label">Asset Classes</p>
+                  </div>
+                  <div>
+                    <p className="about-stat-value">25+</p>
+                    <p className="about-stat-label">Holdings</p>
+                  </div>
+                  <div>
+                    <p className="about-stat-value">2025</p>
+                    <p className="about-stat-label">Founded</p>
+                  </div>
+                  <div>
+                    <p className="about-stat-value">∞</p>
+                    <p className="about-stat-label">Time Horizon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ HOLDINGS ═══════════ */}
+        <section id="holdings" className="holdings">
+          <div className="hr-section">
+            <div className="holdings-header">
+              <p className="holdings-label">Portfolio</p>
+              <Separator size="4" mb="4" mx="auto" style={{ maxWidth: 60 }} />
+              <Heading asChild>
+                <h2 className="holdings-title">Our Holdings</h2>
+              </Heading>
+            </div>
+
+            <div className="holdings-grid">
+              {HOLDINGS.map((h) => (
+                <div key={h.num} className="holding-card">
+                  <p className="holding-card-number">{h.num}</p>
+                  <p className="holding-card-title">{h.title}</p>
+                  <p className="holding-card-desc">{h.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════ FOOTER ═══════════ */}
+        <footer className="footer">
+          <div className="footer-inner">
+            <div>
+              <p className="footer-brand">H Reyes LLC</p>
+              <p className="footer-copy">
+                &copy; {new Date().getFullYear()} H Reyes LLC. All rights reserved.
+              </p>
+            </div>
+            <Flex gap="5" wrap="wrap">
+              <a href="#about" className="footer-link">About</a>
+              <a href="#holdings" className="footer-link">Holdings</a>
+              <a href="mailto:info@hreyesllc.com" className="footer-link">Contact</a>
+            </Flex>
+          </div>
+        </footer>
       </main>
-    </div>
+    </Box>
   );
 }
